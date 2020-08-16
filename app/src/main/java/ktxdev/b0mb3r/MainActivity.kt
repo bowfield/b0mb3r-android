@@ -9,10 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.progress.*
-import ktxdev.b0mb3r.services.AistTaxi
-import ktxdev.b0mb3r.services.AlfaLife
 import ktxdev.b0mb3r.services.IziUA
-import ktxdev.b0mb3r.services.Taxi3040
 import kotlin.concurrent.thread
 
 class MainActivity : AppCompatActivity() {
