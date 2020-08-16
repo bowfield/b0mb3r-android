@@ -1,6 +1,8 @@
 package ktxdev.b0mb3r
 
 import android.app.Dialog
+import android.content.Context
+import android.content.SharedPreferences
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
@@ -20,9 +22,13 @@ class MainActivity : AppCompatActivity() {
         AlfaLife(),
         IziUA()
     )
+
+    var pref: SharedPreferences? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        pref = getSharedPreferences("main", Context.MODE_PRIVATE)
 
         textViewServices.text = textViewServices.text.toString() + services.size.toString()
 
@@ -39,6 +45,9 @@ class MainActivity : AppCompatActivity() {
             var cycles = editTextCount.text.toString().toInt()
 
             thread {
+                var json = ProxyList.get(cycles)
+                pref!!.edit().putString("proxys", json.toString()).apply()
+
                 var i = 0
                 while(i < cycles) {
                     println("(:DEBUG) Проход #${i}")
