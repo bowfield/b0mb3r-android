@@ -1,7 +1,7 @@
 <h1 align="center">b0mb3r для Android 👋</h1>
 <p align="center">Открытый и бесплатный СМС бомбер для Android</p>
 
-![App](srcn.jpg)
+<p align="center">![App](srcn.jpg)</p>
 
 # 🚩 TODO
 - [x] Создать проект
