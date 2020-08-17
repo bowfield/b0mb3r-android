@@ -1,14 +1,14 @@
-package com.y9san9.b0mb3r.service
+package ktxdev.b0mb3r.service
 
 import com.github.kittinunf.fuel.core.FuelManager
 import com.github.kittinunf.fuel.core.interceptors.LogRequestAsCurlInterceptor
 import com.github.kittinunf.fuel.core.interceptors.LogResponseInterceptor
-import com.y9san9.b0mb3r.controller.DEBUG
-import com.y9san9.b0mb3r.phone.Phone
-import com.y9san9.b0mb3r.utils.getRandomUserAgent
+import ktxdev.b0mb3r.controller.DEBUG
+import ktxdev.b0mb3r.phone.Phone
+import ktxdev.b0mb3r.utils.getRandomUserAgent
 
 
-val services by lazy {
+public val services by lazy {
      ServiceFactory.build()
 }
 

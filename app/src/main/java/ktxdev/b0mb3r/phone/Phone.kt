@@ -1,7 +1,6 @@
-package com.y9san9.b0mb3r.phone
+package ktxdev.b0mb3r.phone
 
-import com.y9san9.b0mb3r.utils.mask
-
+import ktxdev.b0mb3r.utils.mask
 
 class Phone {
     var code: Int?

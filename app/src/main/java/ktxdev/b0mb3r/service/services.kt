@@ -1,13 +1,14 @@
-package com.y9san9.b0mb3r.service
+package ktxdev.b0mb3r.service
 
-import com.y9san9.b0mb3r.utils.asJsonObjectOrNull
-import com.y9san9.b0mb3r.utils.randomEmail
-import com.y9san9.b0mb3r.utils.randomRussian
-import com.y9san9.b0mb3r.utils.text
+import ktxdev.b0mb3r.utils.asJsonObjectOrNull
+import ktxdev.b0mb3r.utils.randomEmail
+import ktxdev.b0mb3r.utils.randomRussian
+import ktxdev.b0mb3r.utils.text
 import kotlin.random.Random
 
 
-const val russianMask = "+# (###) ###-##-##"
+const val maskRU = "+# (###) ###-##-##"
+const val maskUA = "+### (##) ###-##-##"
 
 val servicesInitializer: MutableList<Service>.() -> Unit = {
     /**
@@ -61,7 +62,7 @@ val servicesInitializer: MutableList<Service>.() -> Unit = {
         ))
     }
     service("https://kristalnaya.ru/ajax/ajax.php?action=send_one_pas_reg", Method.FORM){ phone ->
-        val masked = phone.code(7).mask(russianMask)
+        val masked = phone.code(7).mask(maskRU)
         params("data" to """{"phone":"$masked"}""")
         disable(masked == null)
         validate { it?.text?.contains("не робот") == false }

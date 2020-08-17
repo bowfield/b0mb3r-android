@@ -6,6 +6,11 @@ android {
     compileSdkVersion 29
     buildToolsVersion "30.0.1"
 
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
     defaultConfig {
         applicationId "ktxdev.b0mb3r"
         minSdkVersion 21

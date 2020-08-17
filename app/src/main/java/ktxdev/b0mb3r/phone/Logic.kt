@@ -1,7 +1,7 @@
-package com.y9san9.b0mb3r.phone
+package ktxdev.b0mb3r.phone
 
-import com.y9san9.b0mb3r.utils.replace
-import com.y9san9.b0mb3r.utils.replaceFirst
+import ktxdev.b0mb3r.utils.replace
+import ktxdev.b0mb3r.utils.replaceFirst
 
 
 val numberLengthToCode = mapOf(
