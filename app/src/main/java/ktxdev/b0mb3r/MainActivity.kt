@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import ktxdev.b0mb3r.controller.*
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.progress.*
 import kotlin.concurrent.thread
 
 class MainActivity : AppCompatActivity() {
@@ -47,7 +48,7 @@ class MainActivity : AppCompatActivity() {
                             is SmsSent -> {
                                 num++
                                 runOnUiThread {
-                                    textViewServices.text = "${num}/${this.getServices().size}"
+                                    dialog.textView2.text = "${num}/${this.getServices().size}"
                                 }
                             }
                         }
