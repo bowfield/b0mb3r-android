@@ -8,17 +8,9 @@ import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.progress.*
-import ktxdev.b0mb3r.services.IziUA
 import kotlin.concurrent.thread
 
 class MainActivity : AppCompatActivity() {
-    var services = listOf<BaseService>(
-        Taxi3040(),
-        AistTaxi(),
-        AlfaLife(),
-        IziUA()
-    )
 
     var pref: SharedPreferences? = null
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,7 +19,7 @@ class MainActivity : AppCompatActivity() {
 
         pref = getSharedPreferences("main", Context.MODE_PRIVATE)
 
-        textViewServices.text = textViewServices.text.toString() + services.size.toString()
+        // textViewServices.text = textViewServices.text.toString() + services.size.toString()
 
         buttonRun.setOnClickListener {
             var dialog = Dialog(this, android.R.style.Theme_DeviceDefault_Light_NoActionBar)
@@ -42,23 +34,6 @@ class MainActivity : AppCompatActivity() {
             var cycles = editTextCount.text.toString().toInt()
 
             thread {
-                var json = ProxyList.get(cycles)
-                pref!!.edit().putString("proxys", json.toString()).apply()
-
-                var i = 0
-                while(i < cycles) {
-                    println("(:DEBUG) Проход #${i}")
-                    var num = 0
-                    services.forEach {
-                        num++
-                        it.onRun(country, phone)
-
-                        runOnUiThread { dialog.textView2.text = "${num}/${services.size}" }
-                        Thread.sleep(1000)
-                    }
-
-                    i++
-                }
 
                 runOnUiThread {
                     dialog.dismiss()
